@@ -7,7 +7,7 @@
 ## Запуск
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/1Fiolet1/LectonTestTask.git
 cd LectonTestTask
 mvn clean package
 java -cp target/lecton-test-task-1.0-SNAPSHOT.jar ru.seleznev.App
