@@ -14,19 +14,19 @@ public final class InMemoryBookRepository implements BookRepository {
     private long nextId = 1;
 
     @Override
-    public synchronized Book add(String title, String author, int year) {
+    public Book add(String title, String author, int year) {
         Book book = new Book(nextId++, title, author, year);
         booksById.put(book.getId(), book);
         return book;
     }
 
     @Override
-    public synchronized Optional<Book> removeById(long id) {
+    public Optional<Book> removeById(long id) {
         return Optional.ofNullable(booksById.remove(id));
     }
 
     @Override
-    public synchronized List<Book> findAll() {
+    public List<Book> findAll() {
         return new ArrayList<Book>(booksById.values());
     }
 }
